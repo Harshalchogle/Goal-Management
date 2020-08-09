@@ -5,7 +5,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name="Users")
@@ -15,19 +20,34 @@ public class User
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 int userid;	
 @Column
+@NotBlank(message = "First Name Cannot be Empty")
 String Fname;
 String Lname;
 String Email;
 String username;
-String Address;
-String city;
-String State;
-String Zip;
-String country;
-String Company;
+String password;
+String authority;
+boolean status;
 
 
-
+public String getPassword() {
+	return password;
+}
+public void setPassword(String password) {
+	this.password = password;
+}
+public String getAuthority() {
+	return authority;
+}
+public void setAuthority(String authority) {
+	this.authority = authority;
+}
+public boolean isStatus() {
+	return status;
+}
+public void setStatus(boolean status) {
+	this.status = status;
+}
 public String getUsername() {
 	return username;
 }
@@ -58,42 +78,7 @@ public String getEmail() {
 public void setEmail(String email) {
 	Email = email;
 }
-public String getAddress() {
-	return Address;
-}
-public void setAddress(String address) {
-	Address = address;
-}
-public String getCity() {
-	return city;
-}
-public void setCity(String city) {
-	this.city = city;
-}
-public String getState() {
-	return State;
-}
-public void setState(String state) {
-	State = state;
-}
-public String getZip() {
-	return Zip;
-}
-public void setZip(String zip) {
-	Zip = zip;
-}
-public String getCountry() {
-	return country;
-}
-public void setCountry(String country) {
-	this.country = country;
-}
-public String getCompany() {
-	return Company;
-}
-public void setCompany(String company) {
-	Company = company;
-}
+
 
 
 }

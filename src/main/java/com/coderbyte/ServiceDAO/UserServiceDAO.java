@@ -7,5 +7,6 @@ public interface UserServiceDAO
 	public boolean AddUser(User user);
 	public boolean deleteUser(int userid);
 	public User displayUserByUsername(String username);
+	public boolean UpdateUser(User user);
 
 }

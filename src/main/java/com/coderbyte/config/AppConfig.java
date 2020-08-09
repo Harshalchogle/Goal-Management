@@ -25,7 +25,6 @@ public class AppConfig
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 		dataSource.setUrl("jdbc:mysql://localhost:3306/goals");
-
 		dataSource.setUsername("root");
 		dataSource.setPassword("1234");
 		return dataSource;
@@ -35,7 +34,7 @@ public class AppConfig
 	    	Properties properties = new Properties();
 	    	properties.put("hibernate.show_sql", "true");
 	    	properties.put("hibernate.hbm2ddl.auto", "update");
-	    	properties.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
+	    	properties.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");    	
 	    	return properties;
 	    }
 	 

@@ -8,27 +8,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.coderbyte.DAO.UserDAO;
-import com.coderbyte.ServiceDAO.UserServiceDAO;
+import com.coderbyte.ServiceDAO.GoalServiceDAO;
+import com.coderbyte.ServiceDAOImpl.GoalServiceDAOImpl;
 import com.coderbyte.config.AppConfig;
-import com.coderbyte.model.User;
-
+import com.coderbyte.model.Goal;
 @RunWith(SpringRunner.class)
 @SpringJUnitConfig(classes = AppConfig.class)
-public class UserTest
+public class GoalTest 
 {
 	@Autowired
-	UserServiceDAO userServiceDAO;
-	@Test
-	public void addUser()
-	{
-		User user=new User();
-		user.setUserid(1);
-		user.setFname("Harshal");
-		user.setLname("Chogle");
-		assertEquals(true, userServiceDAO.AddUser(user));
-		
-	}
-	
+	GoalServiceDAO goalServiceDAO;
 
+	@Test
+	public void AddGoal()
+	{
+		Goal goal=new Goal();
+		goal.setGoalName("Buying Phone");
+		goal.setMicrosavings(200);
+		goal.setnTransactions(4);
+		goal.settAmount(10000);
+		assertEquals(true, goalServiceDAO.AddGoal(goal));
+	}
 }
